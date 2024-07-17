@@ -3,7 +3,7 @@ from langchain_openai import OpenAIEmbeddings
 from dotenv import load_dotenv
 import os
 import pandas as pd
-from ecommbot.data_converter import dataconveter
+from ecommbot.data_converter import dataconverter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI
 
@@ -27,7 +27,7 @@ def ingestdata(status):
     storage=status
     
     if storage==None:
-        docs = dataconveter()
+        docs = dataconverter()
         inserted_ids = vstore.add_documents(docs)
     else:
         return vstore
